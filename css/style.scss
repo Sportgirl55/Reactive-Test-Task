@@ -1,0 +1,126 @@
+$gray: #E5E5E5;
+$blue: #3684E2;
+$dark-blue:#0061D9;
+$white-text: #FFFFFF;
+$gray-text: #3B4256;
+$gray-light: rgba(188,195,202,1);
+$front: 'GOST UI 2', Arial, sans-serif;
+$size: 18px;
+$border: 1px solid red;
+$border1: 1px solid blue;
+@mixin flex() {
+     display: flex;
+     align-items: center;
+   }
+
+
+@font-face {
+     font-family: 'SF Pro Display';
+     src: url("../fonts/SFPro/SFProDisplay-Bold.woff2");
+     font-weight: 700;
+     font-style: normal;
+ }
+
+ @font-face {
+     font-family: 'GOST UI 2';
+     src: url("../fonts/GOST 2.304 A/GostUI_Regular.TTF");
+     font-weight: 400;
+     font-style: normal;
+ }
+
+ @font-face {
+     font-family: 'GOST UI 2';
+     src: url("../fonts/GOST 2.304 A/GostUI_Bold_G.TTF");
+     font-weight: 700;
+     font-style: normal;
+ }
+
+ @font-face {
+     font-family: 'GOST UI 2';
+     src: url("../fonts/GOST 2.304 A/GostUI_Medium.TTF");
+     font-weight: 600;
+     font-style: normal;
+ }
+
+* {
+     margin: 0; 
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+
+body {
+     margin: auto;
+     background: $gray;
+     color: $gray-text;
+     font-family: $front;  
+     font-size: $size;
+     a {
+          text-decoration: none;
+          color: $white-text;
+     }
+    
+     h1 {
+          font-family: 'SF Pro Display', Arial, sans-serif;
+          font-size: 48px; 
+     }
+}
+
+
+
+header {
+     background: $blue;
+     color: $white-text;
+     p {
+          font-size: 18px;
+          font-weight: 700;
+     }
+}
+
+main {
+     p {
+          font-size: 18px;
+     }
+}
+
+ .logo {
+      p:first-child {
+          font-size: 14px; 
+          font-weight: 700;
+      }
+      p:last-child {
+          font-size: 14px; 
+          font-weight: 400;
+      }
+ }
+
+ .container {
+     width: 1120px;
+     margin: auto;
+     .wrapper {
+          @include flex();
+          padding: 16px 0;
+          justify-content: space-between;
+               .login {
+                    @include flex();                
+                    img {
+                         opacity: 0.5;
+                    }
+                    .username {
+                         padding: 0 28px 0 15px;
+                    }
+               }
+               .upper-logo {
+                    @include flex();
+                         p {
+                              margin-left: 21px;
+                         }
+                      
+               }
+     }
+}
+
+
+
+ 
+
