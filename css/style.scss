@@ -4,16 +4,60 @@ $dark-blue:#0061D9;
 $white-text: #FFFFFF;
 $gray-text: #3B4256;
 $gray-light: rgba(188,195,202,1);
-$front: 'GOST UI 2', Arial, sans-serif;
-$size: 18px;
+$blueBtn: #0061D9;
+$input: #F5F5F7;
+
 $border: 1px solid red;
 $border1: 1px solid blue;
+
+$front: 'GOST UI 2', Arial, sans-serif;
+$size: 18px;
+
+$paddingT: 16px;
+
 @mixin flex() {
      display: flex;
      align-items: center;
    }
 
+@mixin normalText() {
+     font-family: $front;
+     font-weight: normal;
+     font-size: $size;
+     line-height: 24px;
+     color: $white-text;
+}
 
+@mixin SFbold() {
+     font-family: 'SF Pro Display', Arial, sans-serif; 
+     font-size: 21px;
+     font-weight: 700;
+     line-height: 32px;
+     letter-spacing: 0em;
+}
+
+@mixin numbers() {
+     font-family: 'SF Pro Display';
+     font-size: 22px;
+     line-height: 28px;
+     color: $white-text;
+}
+
+%number-circle {
+     width: 48px;
+     height: 48px;
+     margin: 16px 32px 0 16px;
+     background-image: url("../img/ellipse_blue.png");
+     display: flex;
+     span {
+          font-family: 'SF Pro Display';
+          font-size: 22px;
+          line-height: 28px;
+          color: $white-text;
+          margin: auto;  
+     }
+}
+  
 @font-face {
      font-family: 'SF Pro Display';
      src: url("../fonts/SFPro/SFProDisplay-Bold.woff2");
@@ -59,11 +103,6 @@ body {
           text-decoration: none;
           color: $white-text;
      }
-    
-     h1 {
-          font-family: 'SF Pro Display', Arial, sans-serif;
-          font-size: 48px; 
-     }
 }
 
 
@@ -71,28 +110,13 @@ body {
 header {
      background: $blue;
      color: $white-text;
+     margin-bottom: 64px;
      p {
-          font-size: 18px;
           font-weight: 700;
      }
 }
 
-main {
-     p {
-          font-size: 18px;
-     }
-}
 
- .logo {
-      p:first-child {
-          font-size: 14px; 
-          font-weight: 700;
-      }
-      p:last-child {
-          font-size: 14px; 
-          font-weight: 400;
-      }
- }
 
  .container {
      width: 1120px;
@@ -120,7 +144,145 @@ main {
      }
 }
 
+main {
+     .container {
+          display: flex;
+          &:first-child {
+               border-bottom: 1px solid rgba(59,66,86,0.3);
+          }
+          .main-wrapper {
+               width: 736px;
+               margin-right: 126px;
+               h1 {
+                    font-family: 'SF Pro Display', Arial, sans-serif;
+                    font-size: 48px; 
+                    line-height: 56px;
+                    padding-bottom: 0.5em;
+               }
+
+              
+               p {
+                    line-height: 1.33333em;
+                    padding-bottom: 40px;
+               }
+          }
+          .down {
+               // display: flex;
+               background: $white-text;
+               margin-top: 40px;
+               h2 {
+                    @include SFbold();
+               }
+                    .box-number {
+                         @extend %number-circle;
+                    }
+                    .wrapper-form {
+                         display: flex;
+                         align-items: baseline;
+                    }
+          }
+
+     }
+}
 
 
- 
 
+ .logo {
+     img {
+          margin: $paddingT 0;
+     } 
+     p {
+          font-size: medium;
+          font-weight: 700;
+          line-height: 20px;
+     }
+     p:last-child {
+          font-weight: 400;
+          font-size: 14px; 
+     }    
+ }
+
+
+
+ form {
+     margin-top: 24px;
+    
+     .form-box {
+          display: flex;
+          flex-direction: column;
+          margin-left: 96px;
+          width: 448px;
+       
+          .radio-item {
+             padding: $paddingT;
+          //    border: $border1;
+             margin-bottom: $paddingT;
+             background: $input;
+
+             display: inline-block;
+             &:focus {
+               outline: 2px solid #c53b2d;
+               outline-offset: 5px;
+             }
+      
+             .radio {
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    opacity: 0;
+                    &:checked ~ .radio-text-up::before {
+                         background-image: url(../img/radio_checked.png);
+               }
+             }
+
+
+           
+               .radio-text-up {
+                    font-weight: 700;
+                    &:before {
+                         content: "";
+                         display: inline-block;
+                         vertical-align: middle;
+                         margin-right: 12px;
+                         width: 20px;
+                         height: 20px;
+                         background-image: url(../img/radio_no_checked.png);
+                         background-repeat: no-repeat;
+                         background-position: center center;
+                         background-size: 20px;     
+                    }
+                   
+               }  
+               .radio-text-down {
+                    padding-left: 32px;
+               }
+                         
+
+               
+          }
+          .continue {
+               background: $blueBtn;
+               border-radius: 4px;
+               border: none;
+               @include normalText();
+               &:hover {
+                    border: 1px solid rgba(0,97,217,0.5);
+              
+               }
+               .btn-text {
+                    padding: 12px 0;
+               }
+               
+               
+          }
+     }
+    
+ }
+
+ .radio:checked ~ .radio-text-up::before {
+     background-image: url(../img/radio_checked.png);
+}
+
+// .radio:checked ~ .radio-text-up::before {
+//      background-color: red;
+// }
