@@ -1,10 +1,10 @@
 $gray: #E5E5E5;
+$gray-text: #3B4256;
+$gray-close: #bcc3ca;
 $blue: #3684E2;
 $dark-blue:#0061D9;
-$white-text: #FFFFFF;
-$gray-text: #3B4256;
-$gray-light: rgba(188,195,202,1);
 $blueBtn: #0061D9;
+$white-text: #FFFFFF;
 $input: #F5F5F7;
 
 $border: 1px solid red;
@@ -92,7 +92,6 @@ $paddingT: 16px;
      box-sizing: border-box;
  }
 
-
 body {
      margin: auto;
      background: $gray;
@@ -104,8 +103,6 @@ body {
           color: $white-text;
      }
 }
-
-
 
 header {
      background: $blue;
@@ -125,22 +122,22 @@ header {
           @include flex();
           padding: 16px 0;
           justify-content: space-between;
-               .login {
-                    @include flex();                
-                    img {
-                         opacity: 0.5;
-                    }
-                    .username {
-                         padding: 0 28px 0 15px;
-                    }
+          .login {
+               @include flex();                
+               img {
+                    opacity: 0.5;
                }
-               .upper-logo {
-                    @include flex();
-                         p {
-                              margin-left: 21px;
-                         }
-                      
+               .username {
+                    padding: 0 28px 0 15px;
                }
+          }
+          .upper-logo {
+               @include flex();
+               p {
+                    margin-left: 21px;
+               }
+                    
+          }
      }
 }
 
@@ -153,33 +150,45 @@ main {
           .main-wrapper {
                width: 736px;
                margin-right: 126px;
+               
                h1 {
                     font-family: 'SF Pro Display', Arial, sans-serif;
                     font-size: 48px; 
                     line-height: 56px;
                     padding-bottom: 0.5em;
                }
-
-              
                p {
                     line-height: 1.33333em;
                     padding-bottom: 40px;
                }
           }
           .down {
-               // display: flex;
                background: $white-text;
-               margin-top: 40px;
+               margin-bottom: 24px;
+               border-radius: 4px;
+               &:first-child {
+                    margin-top: 40px;
+               }
                h2 {
                     @include SFbold();
                }
+               .box-number {
+                    @extend %number-circle;
+               }
+               .wrapper-form {
+                    display: flex;
+                    align-items: baseline;
+               }
+               .closed {
+                    h2 {
+                         color: $gray-close;
+                    }
                     .box-number {
-                         @extend %number-circle;
+                         background-image: url("../img/ellipse_gray.png");
+                         margin: 16px 32px 16px 16px;
                     }
-                    .wrapper-form {
-                         display: flex;
-                         align-items: baseline;
-                    }
+               }
+               
           }
 
      }
@@ -206,37 +215,35 @@ main {
 
  form {
      margin-top: 24px;
-    
      .form-box {
           display: flex;
           flex-direction: column;
           margin-left: 96px;
           width: 448px;
+         
+          .radio {
+               position: absolute;
+               clip: rect(1px,1px,1px,1px);
+               height:1px;
+               width:1px;
+               &:checked ~ .radio-text-up::before {
+                    background-image: url(../img/radio_checked.png);
+          }
        
+        }
+       .active {
+          background: $white-text;
+          outline: 2px solid $blueBtn;
+   
+     
+        }
+        label:not(.active) {
+           background: $input;
+     }
           .radio-item {
              padding: $paddingT;
-          //    border: $border1;
              margin-bottom: $paddingT;
-             background: $input;
-
-             display: inline-block;
-             &:focus {
-               outline: 2px solid #c53b2d;
-               outline-offset: 5px;
-             }
-      
-             .radio {
-                    position: absolute;
-                    width: 20px;
-                    height: 20px;
-                    opacity: 0;
-                    &:checked ~ .radio-text-up::before {
-                         background-image: url(../img/radio_checked.png);
-               }
-             }
-
-
-           
+             border-radius: 4px;
                .radio-text-up {
                     font-weight: 700;
                     &:before {
@@ -251,38 +258,30 @@ main {
                          background-position: center center;
                          background-size: 20px;     
                     }
-                   
                }  
                .radio-text-down {
                     padding-left: 32px;
                }
-                         
-
-               
-          }
+           }
           .continue {
                background: $blueBtn;
                border-radius: 4px;
+               margin-bottom: 24px;
                border: none;
                @include normalText();
-               &:hover {
-                    border: 1px solid rgba(0,97,217,0.5);
-              
-               }
+           
                .btn-text {
                     padding: 12px 0;
                }
-               
-               
-          }
-     }
+           }
+       }
     
- }
+  }
 
- .radio:checked ~ .radio-text-up::before {
-     background-image: url(../img/radio_checked.png);
+
+.form {
+     flex-direction: column;
+     padding-bottom: 288px;
 }
 
-// .radio:checked ~ .radio-text-up::before {
-//      background-color: red;
-// }
+

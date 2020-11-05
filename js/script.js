@@ -1,6 +1,10 @@
 'use strict';
 
-const radioButton = Array.from(document.querySelectorAll('.radio'));
+$('.radio-item').on('click', function() {
+     $(this).addClass('active').siblings().removeClass('active');
+})
+    
+   
 
 
 
@@ -29,3 +33,6 @@ const radioButton = Array.from(document.querySelectorAll('.radio'));
 //           e.currentTarget.style.border = '3px solid red';
 //      })
 // }
+
+
+
