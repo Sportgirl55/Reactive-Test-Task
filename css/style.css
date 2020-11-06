@@ -91,7 +91,10 @@ main .container {
       padding-bottom: 40px; }
   main .container .down {
     background: #FFFFFF;
-    margin-top: 40px; }
+    margin-bottom: 24px;
+    border-radius: 4px; }
+    main .container .down:first-child {
+      margin-top: 40px; }
     main .container .down h2 {
       font-family: 'SF Pro Display', Arial, sans-serif;
       font-size: 21px;
@@ -101,6 +104,16 @@ main .container {
     main .container .down .wrapper-form {
       display: flex;
       align-items: baseline; }
+    main .container .down .closed h2 {
+      color: #bcc3ca; }
+    main .container .down .closed .box-number {
+      background-image: url("../img/ellipse_gray.png");
+      margin: 16px 32px 16px 16px; }
+    main .container .down .checked .box-number {
+      background-image: url("../img/ellipse_checked.png");
+      margin: 16px 32px 16px 16px; }
+      main .container .down .checked .box-number img {
+        margin: auto; }
 
 .logo img {
   margin: 16px 0; }
@@ -114,26 +127,30 @@ main .container {
 
 form {
   margin-top: 24px; }
+  form input {
+    width: 448px;
+    height: 48px; }
   form .form-box {
     display: flex;
     flex-direction: column;
     margin-left: 96px;
     width: 448px; }
+    form .form-box .radio {
+      position: absolute;
+      clip: rect(1px, 1px, 1px, 1px);
+      height: 1px;
+      width: 1px; }
+      form .form-box .radio:checked ~ .radio-text-up::before {
+        background-image: url(../img/radio_checked.png); }
+    form .form-box .active {
+      background: #FFFFFF;
+      outline: 2px solid #0061D9; }
+    form .form-box .radio-item:not(.active) {
+      background: #F5F5F7; }
     form .form-box .radio-item {
       padding: 16px;
       margin-bottom: 16px;
-      background: #F5F5F7;
-      display: inline-block; }
-      form .form-box .radio-item:focus {
-        outline: 2px solid #c53b2d;
-        outline-offset: 5px; }
-      form .form-box .radio-item .radio {
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        opacity: 0; }
-        form .form-box .radio-item .radio:checked ~ .radio-text-up::before {
-          background-image: url(../img/radio_checked.png); }
+      border-radius: 4px; }
       form .form-box .radio-item .radio-text-up {
         font-weight: 700; }
         form .form-box .radio-item .radio-text-up:before {
@@ -149,21 +166,32 @@ form {
           background-size: 20px; }
       form .form-box .radio-item .radio-text-down {
         padding-left: 32px; }
+    form .form-box .form-group {
+      background: #FFFFFF;
+      margin-bottom: 48px; }
+      form .form-box .form-group .form-item {
+        font-family: "GOST UI 2", Arial, sans-serif;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 24px; }
+      form .form-box .form-group .field {
+        border: 1px solid rgba(59, 66, 86, 0.5);
+        border-radius: 4px; }
     form .form-box .continue {
       background: #0061D9;
       border-radius: 4px;
+      margin-bottom: 24px;
       border: none;
       font-family: "GOST UI 2", Arial, sans-serif;
       font-weight: normal;
       font-size: 18px;
       line-height: 24px;
       color: #FFFFFF; }
-      form .form-box .continue:hover {
-        border: 1px solid rgba(0, 97, 217, 0.5); }
       form .form-box .continue .btn-text {
         padding: 12px 0; }
 
-.radio:checked ~ .radio-text-up::before {
-  background-image: url(../img/radio_checked.png); }
+.form {
+  flex-direction: column;
+  padding-bottom: 288px; }
 
 /*# sourceMappingURL=style.css.map */
