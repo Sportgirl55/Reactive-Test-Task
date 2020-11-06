@@ -12,8 +12,10 @@ $border1: 1px solid blue;
 
 $front: 'GOST UI 2', Arial, sans-serif;
 $size: 18px;
+$offset: 48px;
 
 $paddingT: 16px;
+$margin: 16px 32px 16px 16px;
 
 @mixin flex() {
      display: flex;
@@ -25,7 +27,6 @@ $paddingT: 16px;
      font-weight: normal;
      font-size: $size;
      line-height: 24px;
-     color: $white-text;
 }
 
 @mixin SFbold() {
@@ -44,8 +45,8 @@ $paddingT: 16px;
 }
 
 %number-circle {
-     width: 48px;
-     height: 48px;
+     width: $offset;
+     height: $offset;
      margin: 16px 32px 0 16px;
      background-image: url("../img/ellipse_blue.png");
      display: flex;
@@ -153,7 +154,7 @@ main {
                
                h1 {
                     font-family: 'SF Pro Display', Arial, sans-serif;
-                    font-size: 48px; 
+                    font-size: $offset; 
                     line-height: 56px;
                     padding-bottom: 0.5em;
                }
@@ -185,18 +186,26 @@ main {
                     }
                     .box-number {
                          background-image: url("../img/ellipse_gray.png");
-                         margin: 16px 32px 16px 16px;
+                         margin: $margin;
                     }
                }
+               .checked {
+                    .box-number {
+                         background-image: url("../img/ellipse_checked.png");
+                         margin: $margin;
+                         img {
+                              margin: auto;
+                         }
+                    }
+               }
+               
                
           }
 
      }
 }
 
-
-
- .logo {
+.logo {
      img {
           margin: $paddingT 0;
      } 
@@ -211,16 +220,17 @@ main {
      }    
  }
 
-
-
- form {
+form {
      margin-top: 24px;
+     input {
+          width: 448px;
+          height: $offset;
+     }
      .form-box {
           display: flex;
           flex-direction: column;
           margin-left: 96px;
           width: 448px;
-         
           .radio {
                position: absolute;
                clip: rect(1px,1px,1px,1px);
@@ -228,22 +238,19 @@ main {
                width:1px;
                &:checked ~ .radio-text-up::before {
                     background-image: url(../img/radio_checked.png);
+               }
           }
-       
-        }
-       .active {
-          background: $white-text;
-          outline: 2px solid $blueBtn;
-   
-     
-        }
-        label:not(.active) {
-           background: $input;
-     }
+          .active {
+               background: $white-text;
+               outline: 2px solid $blueBtn;
+          }
+          .radio-item:not(.active) {
+               background: $input;
+          }
           .radio-item {
-             padding: $paddingT;
-             margin-bottom: $paddingT;
-             border-radius: 4px;
+               padding: $paddingT;
+               margin-bottom: $paddingT;
+               border-radius: 4px;
                .radio-text-up {
                     font-weight: 700;
                     &:before {
@@ -262,26 +269,37 @@ main {
                .radio-text-down {
                     padding-left: 32px;
                }
-           }
+          }
+          .form-group {
+               background: $white-text;
+               margin-bottom: $offset;
+               .form-item {
+                    @include normalText();
+               }
+               .field {
+                    border: 1px solid rgba(59,66,86,0.5);
+                    border-radius: 4px;
+               }
+          }
+          
+          
           .continue {
                background: $blueBtn;
                border-radius: 4px;
                margin-bottom: 24px;
                border: none;
                @include normalText();
-           
+               color: $white-text;
                .btn-text {
                     padding: 12px 0;
                }
-           }
-       }
-    
-  }
+          }
+     }  
+}
 
 
 .form {
      flex-direction: column;
      padding-bottom: 288px;
 }
-
 
