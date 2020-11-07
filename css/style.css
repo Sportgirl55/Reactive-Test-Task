@@ -1,33 +1,33 @@
-main .container .down .box-number {
+main .container .form-item .box-number {
   width: 48px;
   height: 48px;
-  margin: 16px 32px 0 16px;
+  margin: 16px 32px 16px 16px;
   background-image: url("../img/ellipse_blue.png");
   display: flex; }
-  main .container .down .box-number span {
-    font-family: 'SF Pro Display';
+  main .container .form-item .box-number span {
+    font-family: "SF Pro Display";
     font-size: 22px;
     line-height: 28px;
-    color: #FFFFFF;
+    color: #ffffff;
     margin: auto; }
 
 @font-face {
-  font-family: 'SF Pro Display';
+  font-family: "SF Pro Display";
   src: url("../fonts/SFPro/SFProDisplay-Bold.woff2");
   font-weight: 700;
   font-style: normal; }
 @font-face {
-  font-family: 'GOST UI 2';
+  font-family: "GOST UI 2";
   src: url("../fonts/GOST 2.304 A/GostUI_Regular.TTF");
   font-weight: 400;
   font-style: normal; }
 @font-face {
-  font-family: 'GOST UI 2';
+  font-family: "GOST UI 2";
   src: url("../fonts/GOST 2.304 A/GostUI_Bold_G.TTF");
   font-weight: 700;
   font-style: normal; }
 @font-face {
-  font-family: 'GOST UI 2';
+  font-family: "GOST UI 2";
   src: url("../fonts/GOST 2.304 A/GostUI_Medium.TTF");
   font-weight: 600;
   font-style: normal; }
@@ -38,103 +38,125 @@ main .container .down .box-number {
 
 body {
   margin: auto;
-  background: #E5E5E5;
-  color: #3B4256;
+  background: #e5e5e5;
+  color: #3b4256;
   font-family: "GOST UI 2", Arial, sans-serif;
   font-size: 18px; }
   body a {
     text-decoration: none;
-    color: #FFFFFF; }
+    color: #ffffff; }
 
 header {
-  background: #3684E2;
-  color: #FFFFFF;
-  margin-bottom: 64px; }
-  header p {
+  background: #3684e2;
+  color: #ffffff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0; }
+  header span {
     font-weight: 700; }
 
 .container {
-  width: 1120px;
-  margin: auto; }
-  .container .wrapper {
+  max-width: 1120px;
+  margin: 0 auto; }
+  .container .wrap {
     display: flex;
     align-items: center;
     padding: 16px 0;
     justify-content: space-between; }
-    .container .wrapper .login {
+    .container .wrap .login {
       display: flex;
       align-items: center; }
-      .container .wrapper .login img {
+      .container .wrap .login img {
         opacity: 0.5; }
-      .container .wrapper .login .username {
+      .container .wrap .login .username {
         padding: 0 28px 0 15px; }
-    .container .wrapper .upper-logo {
+    .container .wrap .upper-logo {
       display: flex;
       align-items: center; }
-      .container .wrapper .upper-logo p {
+      .container .wrap .upper-logo span {
         margin-left: 21px; }
 
-main .container {
-  display: flex; }
-  main .container:first-child {
-    border-bottom: 1px solid rgba(59, 66, 86, 0.3); }
-  main .container .main-wrapper {
-    width: 736px;
-    margin-right: 126px; }
-    main .container .main-wrapper h1 {
-      font-family: 'SF Pro Display', Arial, sans-serif;
-      font-size: 48px;
-      line-height: 56px;
-      padding-bottom: 0.5em; }
-    main .container .main-wrapper p {
-      line-height: 1.33333em;
-      padding-bottom: 40px; }
-  main .container .down {
-    background: #FFFFFF;
-    margin-bottom: 24px;
-    border-radius: 4px; }
-    main .container .down:first-child {
-      margin-top: 40px; }
-    main .container .down h2 {
-      font-family: 'SF Pro Display', Arial, sans-serif;
-      font-size: 21px;
-      font-weight: 700;
-      line-height: 32px;
-      letter-spacing: 0em; }
-    main .container .down .wrapper-form {
-      display: flex;
-      align-items: baseline; }
-    main .container .down .closed h2 {
-      color: #bcc3ca; }
-    main .container .down .closed .box-number {
-      background-image: url("../img/ellipse_gray.png");
-      margin: 16px 32px 16px 16px; }
-    main .container .down .checked .box-number {
-      background-image: url("../img/ellipse_checked.png");
-      margin: 16px 32px 16px 16px; }
-      main .container .down .checked .box-number img {
-        margin: auto; }
+main {
+  padding-top: 152px; }
+  main .text {
+    border-bottom: 1px solid rgba(59, 66, 86, 0.3);
+    flex-direction: row; }
+  main .column {
+    flex-direction: column;
+    padding-bottom: 288px; }
+  main .container {
+    display: flex; }
+    main .container .main-wrap {
+      max-width: 736px;
+      margin-right: 126px; }
+      main .container .main-wrap h1 {
+        font-family: "SF Pro Display", Arial, sans-serif;
+        font-size: 48px;
+        line-height: 56px;
+        padding-bottom: 0.5em; }
+      main .container .main-wrap p {
+        line-height: 1.33333em;
+        padding-bottom: 40px; }
+    main .container .form-item {
+      background: #ffffff;
+      margin-bottom: 24px;
+      border-radius: 4px; }
+      main .container .form-item:first-child {
+        margin-top: 40px; }
+      main .container .form-item h2 {
+        font-family: "SF Pro Display", Arial, sans-serif;
+        font-size: 21px;
+        font-weight: 700;
+        line-height: 32px;
+        letter-spacing: 0em; }
+      main .container .form-item .wrapper-form {
+        display: flex;
+        align-items: baseline; }
+      main .container .form-item .closed h2 {
+        color: #bcc3ca; }
+      main .container .form-item .closed .box-number {
+        background-image: url("../img/ellipse_gray.png");
+        margin: 16px 32px 16px 16px; }
+      main .container .form-item .checked .box-number {
+        background-image: url("../img/ellipse_checked.png");
+        margin: 16px 32px 16px 16px; }
+        main .container .form-item .checked .box-number img {
+          margin: auto; }
+      main .container .form-item .checked .change {
+        font-family: "GOST UI 2", Arial, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0em;
+        color: #0061d9;
+        display: flex;
+        align-items: flex-start;
+        margin-right: 16px;
+        margin-left: auto; }
+        main .container .form-item .checked .change span {
+          padding-left: 7px; }
 
 .logo img {
   margin: 16px 0; }
-.logo p {
+.logo span {
+  display: block;
   font-size: medium;
   font-weight: 700;
   line-height: 20px; }
-.logo p:last-child {
+.logo span:last-child {
   font-weight: 400;
   font-size: 14px; }
 
 form {
   margin-top: 24px; }
   form input {
-    width: 448px;
+    max-width: 448px;
     height: 48px; }
   form .form-box {
     display: flex;
     flex-direction: column;
     margin-left: 96px;
-    width: 448px; }
+    max-width: 448px; }
     form .form-box .radio {
       position: absolute;
       clip: rect(1px, 1px, 1px, 1px);
@@ -143,10 +165,10 @@ form {
       form .form-box .radio:checked ~ .radio-text-up::before {
         background-image: url(../img/radio_checked.png); }
     form .form-box .active {
-      background: #FFFFFF;
-      outline: 2px solid #0061D9; }
+      background: #ffffff;
+      outline: 2px solid #0061d9; }
     form .form-box .radio-item:not(.active) {
-      background: #F5F5F7; }
+      background: #f5f5f7; }
     form .form-box .radio-item {
       padding: 16px;
       margin-bottom: 16px;
@@ -167,7 +189,7 @@ form {
       form .form-box .radio-item .radio-text-down {
         padding-left: 32px; }
     form .form-box .form-group {
-      background: #FFFFFF;
+      background: #ffffff;
       margin-bottom: 48px; }
       form .form-box .form-group .form-item {
         font-family: "GOST UI 2", Arial, sans-serif;
@@ -177,8 +199,8 @@ form {
       form .form-box .form-group .field {
         border: 1px solid rgba(59, 66, 86, 0.5);
         border-radius: 4px; }
-    form .form-box .continue {
-      background: #0061D9;
+    form .form-box .button {
+      background: #0061d9;
       border-radius: 4px;
       margin-bottom: 24px;
       border: none;
@@ -186,12 +208,12 @@ form {
       font-weight: normal;
       font-size: 18px;
       line-height: 24px;
-      color: #FFFFFF; }
-      form .form-box .continue .btn-text {
+      color: #ffffff; }
+      form .form-box .button .btn-text {
+        display: block;
         padding: 12px 0; }
 
-.form {
-  flex-direction: column;
-  padding-bottom: 288px; }
+fieldset {
+  border: none; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,16 +1,16 @@
-$gray: #E5E5E5;
-$gray-text: #3B4256;
+$gray: #e5e5e5;
+$gray-text: #3b4256;
 $gray-close: #bcc3ca;
-$blue: #3684E2;
-$dark-blue:#0061D9;
-$blueBtn: #0061D9;
-$white-text: #FFFFFF;
-$input: #F5F5F7;
+$blue: #3684e2;
+$dark-blue: #0061d9;
+$blueBtn: #0061d9;
+$white-text: #ffffff;
+$input: #f5f5f7;
 
 $border: 1px solid red;
 $border1: 1px solid blue;
 
-$front: 'GOST UI 2', Arial, sans-serif;
+$front: "GOST UI 2", Arial, sans-serif;
 $size: 18px;
 $offset: 48px;
 
@@ -18,288 +18,325 @@ $paddingT: 16px;
 $margin: 16px 32px 16px 16px;
 
 @mixin flex() {
-     display: flex;
-     align-items: center;
-   }
+  display: flex;
+  align-items: center;
+}
 
 @mixin normalText() {
-     font-family: $front;
-     font-weight: normal;
-     font-size: $size;
-     line-height: 24px;
+  font-family: $front;
+  font-weight: normal;
+  font-size: $size;
+  line-height: 24px;
 }
 
 @mixin SFbold() {
-     font-family: 'SF Pro Display', Arial, sans-serif; 
-     font-size: 21px;
-     font-weight: 700;
-     line-height: 32px;
-     letter-spacing: 0em;
+  font-family: "SF Pro Display", Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0em;
 }
 
 @mixin numbers() {
-     font-family: 'SF Pro Display';
-     font-size: 22px;
-     line-height: 28px;
-     color: $white-text;
+  font-family: "SF Pro Display", Arial, sans-serif;
+  font-size: 22px;
+  line-height: 28px;
+  color: $white-text;
 }
+@mixin changeBlueText() {
+  font-family: $front;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  color: $blueBtn;
+}
+
+@mixin container() {
+  max-width: 1120px;
+  margin: 0 auto;
+} 
 
 %number-circle {
-     width: $offset;
-     height: $offset;
-     margin: 16px 32px 0 16px;
-     background-image: url("../img/ellipse_blue.png");
-     display: flex;
-     span {
-          font-family: 'SF Pro Display';
-          font-size: 22px;
-          line-height: 28px;
-          color: $white-text;
-          margin: auto;  
-     }
+  width: $offset;
+  height: $offset;
+  margin: $margin;
+  background-image: url("../img/ellipse_blue.png");
+  display: flex;
+  span {
+    font-family: "SF Pro Display";
+    font-size: 22px;
+    line-height: 28px;
+    color: $white-text;
+    margin: auto;
+  }
 }
-  
+
 @font-face {
-     font-family: 'SF Pro Display';
-     src: url("../fonts/SFPro/SFProDisplay-Bold.woff2");
-     font-weight: 700;
-     font-style: normal;
- }
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFPro/SFProDisplay-Bold.woff2");
+  font-weight: 700;
+  font-style: normal;
+}
 
- @font-face {
-     font-family: 'GOST UI 2';
-     src: url("../fonts/GOST 2.304 A/GostUI_Regular.TTF");
-     font-weight: 400;
-     font-style: normal;
- }
+@font-face {
+  font-family: "GOST UI 2";
+  src: url("../fonts/GOST 2.304 A/GostUI_Regular.TTF");
+  font-weight: 400;
+  font-style: normal;
+}
 
- @font-face {
-     font-family: 'GOST UI 2';
-     src: url("../fonts/GOST 2.304 A/GostUI_Bold_G.TTF");
-     font-weight: 700;
-     font-style: normal;
- }
+@font-face {
+  font-family: "GOST UI 2";
+  src: url("../fonts/GOST 2.304 A/GostUI_Bold_G.TTF");
+  font-weight: 700;
+  font-style: normal;
+}
 
- @font-face {
-     font-family: 'GOST UI 2';
-     src: url("../fonts/GOST 2.304 A/GostUI_Medium.TTF");
-     font-weight: 600;
-     font-style: normal;
- }
+@font-face {
+  font-family: "GOST UI 2";
+  src: url("../fonts/GOST 2.304 A/GostUI_Medium.TTF");
+  font-weight: 600;
+  font-style: normal;
+}
 
 * {
-     margin: 0; 
-     padding: 0;
-     box-sizing: border-box;
- }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-     margin: auto;
-     background: $gray;
-     color: $gray-text;
-     font-family: $front;  
-     font-size: $size;
-     a {
-          text-decoration: none;
-          color: $white-text;
-     }
+  margin: auto;
+  background: $gray;
+  color: $gray-text;
+  font-family: $front;
+  font-size: $size;
+  a {
+    text-decoration: none;
+    color: $white-text;
+  }
 }
 
 header {
-     background: $blue;
-     color: $white-text;
-     margin-bottom: 64px;
-     p {
-          font-weight: 700;
-     }
+  background: $blue;
+  color: $white-text;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  span {
+    font-weight: 700;
+  }
+}
+
+.container {
+  @include container();
+  // padding-bottom: 288px;
+
+  .wrap {
+    @include flex();
+    padding: 16px 0;
+    justify-content: space-between;
+    .login {
+      @include flex();
+      img {
+        opacity: 0.5;
+      }
+      .username {
+        padding: 0 28px 0 15px;
+      }
+    }
+    .upper-logo {
+      @include flex();
+      span {
+        margin-left: 21px;
+      }
+    }
+  }
 }
 
 
 
- .container {
-     width: 1120px;
-     margin: auto;
-     .wrapper {
-          @include flex();
-          padding: 16px 0;
-          justify-content: space-between;
-          .login {
-               @include flex();                
-               img {
-                    opacity: 0.5;
-               }
-               .username {
-                    padding: 0 28px 0 15px;
-               }
-          }
-          .upper-logo {
-               @include flex();
-               p {
-                    margin-left: 21px;
-               }
-                    
-          }
-     }
-}
+
+
+
+
+
+
 
 main {
-     .container {
-          display: flex;
-          &:first-child {
-               border-bottom: 1px solid rgba(59,66,86,0.3);
-          }
-          .main-wrapper {
-               width: 736px;
-               margin-right: 126px;
-               
-               h1 {
-                    font-family: 'SF Pro Display', Arial, sans-serif;
-                    font-size: $offset; 
-                    line-height: 56px;
-                    padding-bottom: 0.5em;
-               }
-               p {
-                    line-height: 1.33333em;
-                    padding-bottom: 40px;
-               }
-          }
-          .down {
-               background: $white-text;
-               margin-bottom: 24px;
-               border-radius: 4px;
-               &:first-child {
-                    margin-top: 40px;
-               }
-               h2 {
-                    @include SFbold();
-               }
-               .box-number {
-                    @extend %number-circle;
-               }
-               .wrapper-form {
-                    display: flex;
-                    align-items: baseline;
-               }
-               .closed {
-                    h2 {
-                         color: $gray-close;
-                    }
-                    .box-number {
-                         background-image: url("../img/ellipse_gray.png");
-                         margin: $margin;
-                    }
-               }
-               .checked {
-                    .box-number {
-                         background-image: url("../img/ellipse_checked.png");
-                         margin: $margin;
-                         img {
-                              margin: auto;
-                         }
-                    }
-               }
-               
-               
-          }
+  padding-top: 152px;
+  .text {
+    border-bottom: 1px solid rgba(59, 66, 86, 0.3);
+    flex-direction: row;
+  }
+  .column {
+    flex-direction: column;
+    padding-bottom: 288px;
+  }
 
-     }
+  .container {
+    display: flex;   
+    .main-wrap {
+      max-width: 736px;
+      margin-right: 126px;
+
+      h1 {
+        font-family: "SF Pro Display", Arial, sans-serif;
+        font-size: $offset;
+        line-height: 56px;
+        padding-bottom: 0.5em;
+      }
+      p {
+        line-height: 1.33333em;
+        padding-bottom: 40px;
+      }
+    }
+    .form-item {
+      background: $white-text;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      &:first-child {
+        margin-top: 40px;
+      }
+      h2 {
+        @include SFbold();
+      }
+      .box-number {
+        @extend %number-circle;
+      }
+      .wrapper-form {
+        display: flex;
+        align-items: baseline;
+      }
+      .closed {
+        h2 {
+          color: $gray-close;
+        }
+        .box-number {
+          background-image: url("../img/ellipse_gray.png");
+          margin: $margin;
+        }
+      }
+      .checked {
+        .box-number {
+          background-image: url("../img/ellipse_checked.png");
+          margin: $margin;
+          img {
+            margin: auto;
+          }
+        }
+        .change {
+          @include changeBlueText();
+          display: flex;
+          align-items: flex-start;
+          margin-right: 16px;
+          margin-left: auto;
+          span {
+            padding-left: 7px;
+          }
+        }
+      }
+    }
+  }
 }
 
 .logo {
-     img {
-          margin: $paddingT 0;
-     } 
-     p {
-          font-size: medium;
-          font-weight: 700;
-          line-height: 20px;
-     }
-     p:last-child {
-          font-weight: 400;
-          font-size: 14px; 
-     }    
- }
+  img {
+    margin: $paddingT 0;
+  }
+  span {
+    display: block;
+    font-size: medium;
+    font-weight: 700;
+    line-height: 20px;
+  }
+  span:last-child {
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
 
 form {
-     margin-top: 24px;
-     input {
-          width: 448px;
-          height: $offset;
-     }
-     .form-box {
-          display: flex;
-          flex-direction: column;
-          margin-left: 96px;
-          width: 448px;
-          .radio {
-               position: absolute;
-               clip: rect(1px,1px,1px,1px);
-               height:1px;
-               width:1px;
-               &:checked ~ .radio-text-up::before {
-                    background-image: url(../img/radio_checked.png);
-               }
-          }
-          .active {
-               background: $white-text;
-               outline: 2px solid $blueBtn;
-          }
-          .radio-item:not(.active) {
-               background: $input;
-          }
-          .radio-item {
-               padding: $paddingT;
-               margin-bottom: $paddingT;
-               border-radius: 4px;
-               .radio-text-up {
-                    font-weight: 700;
-                    &:before {
-                         content: "";
-                         display: inline-block;
-                         vertical-align: middle;
-                         margin-right: 12px;
-                         width: 20px;
-                         height: 20px;
-                         background-image: url(../img/radio_no_checked.png);
-                         background-repeat: no-repeat;
-                         background-position: center center;
-                         background-size: 20px;     
-                    }
-               }  
-               .radio-text-down {
-                    padding-left: 32px;
-               }
-          }
-          .form-group {
-               background: $white-text;
-               margin-bottom: $offset;
-               .form-item {
-                    @include normalText();
-               }
-               .field {
-                    border: 1px solid rgba(59,66,86,0.5);
-                    border-radius: 4px;
-               }
-          }
-          
-          
-          .continue {
-               background: $blueBtn;
-               border-radius: 4px;
-               margin-bottom: 24px;
-               border: none;
-               @include normalText();
-               color: $white-text;
-               .btn-text {
-                    padding: 12px 0;
-               }
-          }
-     }  
+  margin-top: 24px;
+  
+  input {
+    max-width: 448px;
+    height: $offset;
+  }
+  .form-box {
+    display: flex;
+    flex-direction: column;
+    margin-left: 96px;
+    max-width: 448px;
+    .radio {
+      position: absolute;
+      clip: rect(1px, 1px, 1px, 1px);
+      height: 1px;
+      width: 1px;
+      &:checked ~ .radio-text-up::before {
+        background-image: url(../img/radio_checked.png);
+      }
+    }
+    .active {
+      background: $white-text;
+      outline: 2px solid $blueBtn;
+    }
+    .radio-item:not(.active) {
+      background: $input;
+    }
+    .radio-item {
+      padding: $paddingT;
+      margin-bottom: $paddingT;
+      border-radius: 4px;
+      .radio-text-up {
+        font-weight: 700;
+        &:before {
+          content: "";
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 12px;
+          width: 20px;
+          height: 20px;
+          background-image: url(../img/radio_no_checked.png);
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 20px;
+        }
+      }
+      .radio-text-down {
+        padding-left: 32px;
+      }
+    }
+    .form-group {
+      background: $white-text;
+      margin-bottom: $offset;
+      .form-item {
+        @include normalText();
+      }
+      .field {
+        border: 1px solid rgba(59, 66, 86, 0.5);
+        border-radius: 4px;
+      }
+    }
+
+    .button {
+      background: $blueBtn;
+      border-radius: 4px;
+      margin-bottom: 24px;
+      border: none;
+      @include normalText();
+      color: $white-text;
+      .btn-text {
+        display: block;
+        padding: 12px 0;
+      }
+    }
+  }
 }
 
 
-.form {
-     flex-direction: column;
-     padding-bottom: 288px;
-}
 
+fieldset {
+  border: none;
+}
