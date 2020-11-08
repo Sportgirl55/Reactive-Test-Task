@@ -82,8 +82,12 @@ main {
   main .text {
     border-bottom: 1px solid rgba(59, 66, 86, 0.3);
     flex-direction: row; }
+    main .text p {
+      line-height: 1.33333em;
+      padding-bottom: 40px; }
   main .column {
     flex-direction: column;
+    padding-top: 40px;
     padding-bottom: 288px; }
   main .container {
     display: flex; }
@@ -95,15 +99,10 @@ main {
         font-size: 48px;
         line-height: 56px;
         padding-bottom: 0.5em; }
-      main .container .main-wrap p {
-        line-height: 1.33333em;
-        padding-bottom: 40px; }
     main .container .form-item {
       background: #ffffff;
       margin-bottom: 24px;
       border-radius: 4px; }
-      main .container .form-item:first-child {
-        margin-top: 40px; }
       main .container .form-item h2 {
         font-family: "SF Pro Display", Arial, sans-serif;
         font-size: 21px;
@@ -116,11 +115,9 @@ main {
       main .container .form-item .closed h2 {
         color: #bcc3ca; }
       main .container .form-item .closed .box-number {
-        background-image: url("../img/ellipse_gray.png");
-        margin: 16px 32px 16px 16px; }
+        background-image: url("../img/ellipse_gray.png"); }
       main .container .form-item .checked .box-number {
-        background-image: url("../img/ellipse_checked.png");
-        margin: 16px 32px 16px 16px; }
+        background-image: url("../img/ellipse_checked.png"); }
         main .container .form-item .checked .box-number img {
           margin: auto; }
       main .container .form-item .checked .change {
@@ -133,8 +130,9 @@ main {
         align-items: flex-start;
         margin-right: 16px;
         margin-left: auto; }
-        main .container .form-item .checked .change span {
-          padding-left: 7px; }
+        main .container .form-item .checked .change a {
+          padding-left: 7px;
+          color: #0061d9; }
 
 .logo img {
   margin: 16px 0; }
@@ -147,73 +145,97 @@ main {
   font-weight: 400;
   font-size: 14px; }
 
-form {
-  margin-top: 24px; }
-  form input {
-    max-width: 448px;
-    height: 48px; }
-  form .form-box {
-    display: flex;
-    flex-direction: column;
-    margin-left: 96px;
-    max-width: 448px; }
-    form .form-box .radio {
-      position: absolute;
-      clip: rect(1px, 1px, 1px, 1px);
-      height: 1px;
-      width: 1px; }
-      form .form-box .radio:checked ~ .radio-text-up::before {
-        background-image: url(../img/radio_checked.png); }
-    form .form-box .active {
-      background: #ffffff;
-      outline: 2px solid #0061d9; }
-    form .form-box .radio-item:not(.active) {
-      background: #f5f5f7; }
-    form .form-box .radio-item {
-      padding: 16px;
-      margin-bottom: 16px;
-      border-radius: 4px; }
-      form .form-box .radio-item .radio-text-up {
-        font-weight: 700; }
-        form .form-box .radio-item .radio-text-up:before {
-          content: "";
-          display: inline-block;
-          vertical-align: middle;
-          margin-right: 12px;
-          width: 20px;
-          height: 20px;
-          background-image: url(../img/radio_no_checked.png);
-          background-repeat: no-repeat;
-          background-position: center center;
-          background-size: 20px; }
-      form .form-box .radio-item .radio-text-down {
-        padding-left: 32px; }
-    form .form-box .form-group {
-      background: #ffffff;
-      margin-bottom: 48px; }
-      form .form-box .form-group .form-item {
-        font-family: "GOST UI 2", Arial, sans-serif;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 24px; }
-      form .form-box .form-group .field {
-        border: 1px solid rgba(59, 66, 86, 0.5);
-        border-radius: 4px; }
-    form .form-box .button {
-      background: #0061d9;
-      border-radius: 4px;
-      margin-bottom: 24px;
-      border: none;
+form input {
+  max-width: 448px;
+  border-radius: 4px;
+  height: 48px; }
+form .form-box {
+  display: flex;
+  flex-direction: column;
+  margin-left: 96px;
+  max-width: 448px; }
+  form .form-box legend {
+    line-height: 24px;
+    color: #3b4256;
+    font-weight: bold;
+    font-family: "GOST UI 2", Arial, sans-serif;
+    font-size: 18px; }
+  form .form-box .radio {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    width: 1px; }
+    form .form-box .radio:checked ~ .radio-text-up::before {
+      background-image: url(../img/radio_checked.png); }
+  form .form-box .check {
+    background: #ffffff;
+    outline: 2px solid #0061d9; }
+  form .form-box .radio-item:not(.check) {
+    background: #f5f5f7; }
+  form .form-box .radio-item {
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 4px; }
+    form .form-box .radio-item .radio-text-up {
+      font-weight: 700; }
+      form .form-box .radio-item .radio-text-up:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 12px;
+        width: 20px;
+        height: 20px;
+        background-image: url(../img/radio_no_checked.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 20px; }
+    form .form-box .radio-item .radio-text-down {
+      padding-left: 32px; }
+  form .form-box .form-group {
+    background: #ffffff; }
+    form .form-box .form-group .form-item {
       font-family: "GOST UI 2", Arial, sans-serif;
       font-weight: normal;
-      font-size: 18px;
-      line-height: 24px;
-      color: #ffffff; }
-      form .form-box .button .btn-text {
-        display: block;
-        padding: 12px 0; }
+      line-height: 24px; }
+    form .form-box .form-group .field {
+      width: -webkit-fill-available;
+      border: 1px solid rgba(59, 66, 86, 0.5); }
+  form .form-box .consent li {
+    margin-top: 8px; }
+  form .form-box .accept {
+    margin-bottom: 24px; }
+    form .form-box .accept li {
+      margin-bottom: 8px;
+      list-style-type: none; }
+  form .form-box .button {
+    background: #0061d9;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    border: none;
+    font-family: "GOST UI 2", Arial, sans-serif;
+    font-weight: normal;
+    line-height: 24px;
+    color: #ffffff; }
+    form .form-box .button .btn-text {
+      display: block;
+      padding: 12px 0; }
+  form .form-box .button-group {
+    display: flex;
+    justify-content: space-between; }
+    form .form-box .button-group .tinyBtn {
+      width: calc(50% - 32px); }
 
 fieldset {
   border: none; }
+
+h3 {
+  line-height: 24px;
+  color: #3b4256;
+  font-weight: bold;
+  font-family: "GOST UI 2", Arial, sans-serif;
+  font-size: 18px; }
+
+.hidden {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */
