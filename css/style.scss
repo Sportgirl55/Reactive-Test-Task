@@ -266,7 +266,7 @@ form {
         @include normalText();
       }
       .field {
-        width: -webkit-fill-available;
+        width: 100%;
         border: 1px solid rgba(59, 66, 86, 0.5);
         margin-top: 8px;
       }
