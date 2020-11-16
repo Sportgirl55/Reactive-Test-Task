@@ -1,23 +1,419 @@
-/*
-Errno::ENOENT: No such file or directory @ rb_sysopen - style.scss
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFPro/SFProDisplay-Bold.woff2");
+  font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: "GOST UI 2";
+  src: url("../fonts/GOST 2.304 A/GostUI_Regular.TTF");
+  font-weight: 400;
+  font-style: normal; }
+@font-face {
+  font-family: "GOST UI 2";
+  src: url("../fonts/GOST 2.304 A/GostUI_Bold_G.TTF");
+  font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: "GOST UI 2";
+  src: url("../fonts/GOST 2.304 A/GostUI_Medium.TTF");
+  font-weight: 600;
+  font-style: normal; }
+* {
+  margin: 0;
+  padding: 0;
+  border-radius: 4px;
+  box-sizing: border-box; }
 
-Backtrace:
-C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:454:in `read'
-C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:454:in `update_stylesheet'
-C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:294:in `watch'
-C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/plugin.rb:109:in `method_missing'
-C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:358:in `watch_or_update'
-C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:51:in `process_result'
-C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:50:in `parse'
-C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:18:in `parse!'
-C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/bin/sass:13:in `<top (required)>'
-C:/Ruby27-x64/bin/sass:23:in `load'
-C:/Ruby27-x64/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Errno::ENOENT: No such file or directory @ rb_sysopen - style.scss"; }
+body {
+  margin: 0;
+  background: #e5e5e5;
+  color: #3b4256;
+  font-family: "GOST UI 2", Arial, sans-serif;
+  font-size: 18px; }
+  body a {
+    text-decoration: none;
+    color: #3684e2; }
+  body .header {
+    z-index: 999;
+    background: #3684e2;
+    color: #ffffff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0; }
+    body .header span {
+      font-weight: 700; }
+    body .header a {
+      color: #ffffff; }
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto; }
+  .container .wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 16px 0; }
+    .container .wrap .login {
+      display: flex;
+      align-items: center; }
+      .container .wrap .login img {
+        opacity: 0.5; }
+      .container .wrap .login .username {
+        padding: 0 28px 0 15px; }
+    .container .wrap .upper-logo {
+      display: flex;
+      align-items: center; }
+      .container .wrap .upper-logo span {
+        margin-left: 21px; }
+  .container .wrapper-steps {
+    max-width: 736px;
+    margin-right: 126px; }
+    .container .wrapper-steps:last-child {
+      padding-top: 40px;
+      padding-bottom: 288px; }
+    .container .wrapper-steps h1 {
+      font-family: "SF Pro Display", Arial, sans-serif;
+      font-size: 48px;
+      line-height: 56px;
+      padding-bottom: 0.5em; }
+    .container .wrapper-steps .step {
+      background-color: #ffffff;
+      margin-bottom: 24px; }
+      .container .wrapper-steps .step .step-header {
+        display: flex;
+        align-items: center; }
+        .container .wrapper-steps .step .step-header .step-title {
+          margin-right: auto;
+          font-family: "SF Pro Display", Arial, sans-serif;
+          font-size: 21px;
+          font-weight: 700;
+          line-height: 32px;
+          letter-spacing: 0em; }
+      .container .wrapper-steps .step .attention {
+        align-items: flex-start;
+        background: #fff5e6;
+        padding: 16px 20px 24px 20px;
+        margin-bottom: 16px; }
+        .container .wrapper-steps .step .attention img {
+          padding-right: 16px; }
+
+.step-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  margin: 16px 32px 16px 16px;
+  background-color: #bcc3ca;
+  font-family: "SF Pro Display", Arial, sans-serif;
+  font-size: 22px;
+  line-height: 28px;
+  color: #ffffff;
+  color: #ffffff; }
+
+.step-content {
+  display: none;
+  background: #ffffff;
+  margin-bottom: 24px; }
+  .step-content .btn {
+    background: #0061d9;
+    margin-bottom: 24px;
+    width: 100%;
+    border: none;
+    outline: none; }
+    .step-content .btn .btn-text {
+      display: block;
+      padding: 12px 0;
+      font-family: "GOST UI 2", Arial, sans-serif;
+      font-weight: normal;
+      line-height: 24px;
+      font-size: 18px;
+      color: #3b4256;
+      color: #ffffff; }
+    .step-content .btn:hover {
+      background: #3684e2; }
+
+main {
+  padding-top: 88px; }
+  main .intro {
+    display: flex;
+    padding-top: 64px;
+    border-bottom: 1px solid rgba(59, 66, 86, 0.3); }
+    main .intro p {
+      font-family: "GOST UI 2", Arial, sans-serif;
+      font-weight: normal;
+      line-height: 24px;
+      font-size: 18px;
+      color: #3b4256;
+      padding-bottom: 40px; }
+    main .intro .logo {
+      padding-top: 16px; }
+      main .intro .logo img {
+        margin-bottom: 16px; }
+      main .intro .logo span {
+        display: block;
+        font-size: medium;
+        font-weight: 700;
+        line-height: 20px; }
+        main .intro .logo span:last-child {
+          font-family: "GOST UI 2", Arial, sans-serif;
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: 0em;
+          font-weight: 400; }
+
+form fieldset {
+  border: none; }
+form .form-box {
+  display: flex;
+  flex-direction: column;
+  max-width: 448px;
+  margin-left: calc((100% - 448px) / 3);
+  margin-right: calc((100% - 448px) / 3 * 2); }
+  form .form-box legend {
+    line-height: 24px;
+    color: #3b4256;
+    font-weight: bold;
+    font-family: "GOST UI 2", Arial, sans-serif;
+    font-size: 18px;
+    margin-bottom: 16px;
+    padding-top: 8px; }
+  form .form-box .form-group {
+    background: #ffffff;
+    margin-bottom: 16px; }
+    form .form-box .form-group .form-item {
+      font-family: "GOST UI 2", Arial, sans-serif;
+      font-weight: normal;
+      line-height: 24px;
+      font-size: 18px;
+      color: #3b4256; }
+    form .form-box .form-group .field {
+      width: -webkit-fill-available;
+      border: 1px solid rgba(59, 66, 86, 0.5);
+      margin-top: 8px; }
+  form .form-box .document {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+    form .form-box .document p {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-direction: column; }
+    form .form-box .document input[type="text"] {
+      width: 100vh; }
+    form .form-box .document input[name="series"] {
+      width: 160px; }
+    form .form-box .document input[name="number"] {
+      width: 256px; }
+  form .form-box .issue-date .wrap-date {
+    display: flex; }
+    form .form-box .issue-date .wrap-date label {
+      color: #848e99; }
+    form .form-box .issue-date .wrap-date .field:not([name="year"]) {
+      width: 120px;
+      margin-right: 16px; }
+    form .form-box .issue-date .wrap-date input[name="year"] {
+      width: 176px; }
+  form .form-box h3 {
+    line-height: 24px;
+    color: #3b4256;
+    font-weight: bold;
+    font-family: "GOST UI 2", Arial, sans-serif;
+    font-size: 18px; }
+
+.consent {
+  margin-bottom: 24px; }
+  .consent li {
+    margin-top: 8px;
+    padding-right: 2px;
+    list-style-position: inside; }
+
+.caution {
+  margin-bottom: 24px; }
+  .caution p {
+    font-family: "GOST UI 2", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0em; }
+
+#accept {
+  max-width: 556px;
+  margin: 0 calc((100% - 446px) / 3); }
+  #accept .accept {
+    margin-bottom: 24px; }
+    #accept .accept li {
+      margin-bottom: 8px;
+      list-style-type: none; }
+      #accept .accept li span {
+        font-weight: bold; }
+
+.radio-item {
+  display: block;
+  padding: 16px;
+  margin-bottom: 16px;
+  position: relative; }
+
+.radio-item input[type="radio"] {
+  position: absolute;
+  display: block;
+  z-index: -1;
+  opacity: 0;
+  width: 0;
+  height: 0; }
+
+.radio-item .radio-text-up {
+  display: inline-block;
+  position: relative;
+  padding: 0 0 0 32px;
+  font-weight: bold; }
+
+.radio-item .radio-text-up:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  background: url(../img/radio_no_checked.png) 0 0 no-repeat; }
+
+.radio-item input[type="radio"]:checked + .radio-text-up:before {
+  background-image: url(../img/radio_checked.png); }
+
+input {
+  max-width: 448px;
+  height: 48px;
+  text-indent: 10px; }
+
+.radio {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px; }
+  .radio:checked ~ .radio-text-up::before {
+    background-image: url(../img/radio_checked.png); }
+  .radio:checked ~ .check-text::before {
+    background: #0061d9;
+    background-image: url(../img/check_mark.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 15px; }
+
+.radio-item:not(.check),
+.check-item:not(.check) {
+  background: #f5f5f7; }
+
+.radio-text-down {
+  padding-left: 32px; }
+
+.check-item {
+  display: block;
+  padding: 16px;
+  margin-bottom: 16px;
+  position: relative; }
+
+.check-item input[type="checkbox"] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  display: block;
+  width: 0;
+  height: 0; }
+
+.check-item span {
+  display: inline-block;
+  position: relative;
+  padding: 0 0 0 32px; }
+
+.check-item span:before {
+  content: "";
+  display: inline-block;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(../img/qube.png) 0 0 no-repeat; }
+
+.check-item input[type="checkbox"]:checked + span:before {
+  background-image: url(../img/check_mark.png); }
+
+.check {
+  background: #ffffff;
+  box-shadow: 0 0 0 2px #0061d9; }
+
+.button {
+  background: #0061d9;
+  margin-bottom: 24px;
+  width: 100%;
+  border: none;
+  outline: none; }
+  .button .btn-text {
+    display: block;
+    padding: 12px 0;
+    font-family: "GOST UI 2", Arial, sans-serif;
+    font-weight: normal;
+    line-height: 24px;
+    font-size: 18px;
+    color: #3b4256;
+    color: #ffffff; }
+  .button:hover {
+    background: #3684e2; }
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px; }
+  .button-group .tinyBtn {
+    width: calc(50% - 32px); }
+  .button-group #whiteBtn {
+    background: #ffffff;
+    box-shadow: 0 0 0 1px #0061d9; }
+    .button-group #whiteBtn:hover {
+      box-shadow: 0 0 0 2px #0061d9; }
+    .button-group #whiteBtn .btn-text {
+      color: #0061d9; }
+
+.btn-change,
+.open .btn-change,
+.change .step-content,
+.hidden {
+  display: none; }
+
+.open .step-count {
+  background-color: #0061d9; }
+
+.open .step-content {
+  display: block; }
+
+.change .step-count,
+.done .step-count {
+  background-color: #1bc400;
+  background-image: url("../img/check_mark.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 20px; }
+  .change .step-count span,
+  .done .step-count span {
+    display: none; }
+
+.change .btn-change {
+  font-family: "GOST UI 2", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  color: #0061d9;
+  display: flex;
+  align-items: flex-start;
+  margin-right: 16px;
+  margin-left: auto; }
+  .change .btn-change a {
+    padding-left: 7px;
+    color: #0061d9; }
+
+/*# sourceMappingURL=style.css.map */
